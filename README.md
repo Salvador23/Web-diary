@@ -6,8 +6,9 @@
 [测试图像](https://github.com/Salvador23/Web-diary/blob/master/Public/Images/阿狸(1).png)
 
 ## 开发日记
-在业余期间，抽取时间一部分充电来学习开发遇到一些问题，以免掉入一些坑，为了记下备忘录。<br/>
+在业余期间，抽取时间一部分来充电学习开发遇到一些问题，以免掉入一些坑，为了记下备忘录。<br/>
 * [微信小程序](https://github.com/Salvador23/Web-diary/blob/master/Articles/wx/wx.md)
+
 
 ## 勘误及提问
 如果有疑问或者发现错误，可以在相应的`issues`进行提问或勘误。<br />
