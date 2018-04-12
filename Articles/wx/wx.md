@@ -9,14 +9,14 @@
 ![model-png](https://github.com/Salvador23/Web-diary/blob/master/Public/Images/model.png)
 
 * .wxml：<br/>
-```python
+```html
 <modal hidden="{{hidden}}" title="这里是title" confirm-text="自定义确定按钮" cancel-text="自定义取消按钮" bindcancel="cancel" bindconfirm="confirm" no-cancel="{{nocancel}}">
   这是对话框的内容。
 </modal>
 ```
 
 * .js：<br/>
-```java
+```js
 Page({
     data:{
         hidden:false,
