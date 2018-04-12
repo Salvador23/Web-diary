@@ -16,7 +16,7 @@
 ```
 
 * .js：<br/>
-```python
+```java
 Page({
     data:{
         hidden:false,
@@ -36,4 +36,4 @@ Page({
 })
 ```
 * 运行效果：<br/>
-![model-git](https://github.com/Salvador23/Web-diary/blob/master/Public/Images/model.git)
+![model-git](https://github.com/Salvador23/Web-diary/blob/master/Public/Images/model.gif)
