@@ -1,6 +1,6 @@
 [微信小程序---弹框组件model](#wx-model)<br/>
-[微信小程序---弹框组件toast](#wx-toast)<br/>
-[微信小程序---弹框组件loading](#wx-loading)<br/>
+[微信小程序---消息提示框toast](#wx-toast)<br/>
+[微信小程序---加载中提示框loading](#wx-loading)<br/>
 
 ------
 <div id="wx-model"></div>
@@ -44,7 +44,7 @@ Page({
 
 <div id="wx-toast"></div>
 
-#### toast弹框组件说明
+#### toast消息提示框说明
 > toast为消息提示框，无按钮，如需关闭弹框可以添加事件设置hidden为true，在弹框显示后经过duration指定的时间后触发bindchange绑定的函数。
 * 官方文档：<br/>
 
@@ -83,7 +83,7 @@ Page({
 
 <div id="wx-loading"></div>
 
-#### loading弹框组件说明
+#### loading加载中提示框说明
 > loading只有一个属性hidden
 
 * .wxml：<br/>
