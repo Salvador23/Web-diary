@@ -9,7 +9,7 @@
 > model类似于javascript中的confirm弹框，默认情况下是一个带有确认取消的弹框，不过点击取消弹框不会自动隐藏，需要通过触发事件调用函数来控制hidden属性
 * 官网文档：<br/>
 
-![model-Image](https://github.com/MoonCheung/Web-diary/blob/master/Public/Images/model.png)
+![model-Image](https://github.com/MoonCheung/Web-diary/blob/master/static/Images/model.png)
 
 * .wxml：<br/>
 ```html
@@ -40,7 +40,7 @@ Page({
 ```
 * 运行效果：<br/>
 
-![model-gif](https://github.com/MoonCheung/Web-diary/blob/master/Public/Images/model.gif)
+![model-gif](https://github.com/MoonCheung/Web-diary/blob/master/static/Images/model.gif)
 
 <div id="wx-toast"></div>
 
@@ -48,7 +48,7 @@ Page({
 > toast为消息提示框，无按钮，如需关闭弹框可以添加事件设置hidden为true，在弹框显示后经过duration指定的时间后触发bindchange绑定的函数。
 * 官方文档：<br/>
 
-![toast-Image](https://github.com/MoonCheung/Web-diary/blob/master/Public/Images/toast.png)
+![toast-Image](https://github.com/MoonCheung/Web-diary/blob/master/static/Images/toast.png)
 
 * .wxml：<br/>
 ```html
@@ -79,7 +79,7 @@ Page({
 
 * 运行效果：<br/>
 
-![toast-gif](https://github.com/MoonCheung/Web-diary/blob/master/Public/Images/toast.gif)
+![toast-gif](https://github.com/MoonCheung/Web-diary/blob/master/static/Images/toast.gif)
 
 <div id="wx-loading"></div>
 
@@ -111,4 +111,4 @@ Page({
 ```
 * 运行效果：<br/>
 
-![loading-gif](https://github.com/MoonCheung/Web-diary/blob/master/Public/Images/loading.gif)
+![loading-gif](https://github.com/MoonCheung/Web-diary/blob/master/static/Images/loading.gif)
