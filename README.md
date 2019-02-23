@@ -25,6 +25,7 @@
 	<summary>设计模式</summary>
 
 * [发布-订阅模式](https://github.com/MoonCheung/Web-diary/blob/master/articles/设计模式/发布-订阅模式.md)
+* [命令模式](https://github.com/MoonCheung/Web-diary/blob/master/articles/设计模式/命令模式.md)
 
 </details> 
 
