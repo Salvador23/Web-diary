@@ -6,6 +6,11 @@
 在业余期间，抽取时间一部分来充电学习开发遇到一些问题，以免掉入一些坑，为了记下备忘录。<br/>
 
 <details>
+  <summary>基础篇</summary>
+
+</details>
+
+<details>
   <summary>小程序系列</summary>
 
 * [微信小程序](https://github.com/MoonCheung/Web-diary/blob/master/articles/小程序系列/wx.md)
@@ -13,10 +18,18 @@
 </details>
 
 <details>
+  <summary>ES6基础</summary>
+</details>
+
+<details>
 	<summary>设计模式</summary>
 
 * [JS设计模式](https://github.com/MoonCheung/Web-diary/blob/master/articles/设计模式/DesignModel.md)
 
+</details> 
+
+<details>
+  <summary>Node.js</summary>
 </details>
 
 
