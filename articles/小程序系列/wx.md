@@ -21,21 +21,21 @@
 * .js：<br/>
 ```js
 Page({
-    data:{
-        hidden:false,
-        nocancel:false
-    },
-    cancel: function(){
-        this.setData({
-             hidden: true
-        });
-    },
-    confirm: function(){
-        this.setData({
-             nocancel: !this.data.nocancel
-        });    
-        console.log("clicked confirm");
-    }
+  data:{
+    hidden:false,
+    nocancel:false
+  },
+  cancel: function(){
+    this.setData({
+          hidden: true
+    });
+  },
+  confirm: function(){
+    this.setData({
+          nocancel: !this.data.nocancel
+    });    
+    console.log("clicked confirm");
+  }
 })
 ```
 * 运行效果：<br/>
