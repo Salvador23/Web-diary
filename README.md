@@ -8,6 +8,8 @@
 <details>
   <summary>基础篇</summary>
 
+* [算法解析](https://github.com/MoonCheung/Web-diary/blob/master/articles/基础篇/算法解析.md)
+
 </details>
 
 <details>
