@@ -20,10 +20,6 @@
 </details>
 
 <details>
-  <summary>ES6基础</summary>
-</details>
-
-<details>
   <summary>Vue系列</summary>
 </details>
 
