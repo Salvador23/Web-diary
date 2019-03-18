@@ -12,7 +12,7 @@
 
 * 官网文档：<br/>
 
-![model-Image](https://github.com/MoonCheung/Web-diary/blob/master/static/Images/model.png)
+![model-Image](https://github.com/MoonCheung/WebDiary/blob/master/static/Images/model.png)
 
 * .wxml：<br/>
 
@@ -46,7 +46,7 @@ Page({
 
 * 运行效果：<br/>
 
-![model-gif](https://github.com/MoonCheung/Web-diary/blob/master/static/Images/model.gif)
+![model-gif](https://github.com/MoonCheung/WebDiary/blob/master/static/Images/model.gif)
 
 <div id="wx-toast"></div>
 
@@ -56,7 +56,8 @@ Page({
 
 * 官方文档：<br/>
 
-![toast-Image](https://github.com/MoonCheung/Web-diary/blob/master/static/Images/toast.png)
+
+![toast-Image](https://github.com/MoonCheung/WebDiary/blob/master/static/Images/toast.png)
 
 * .wxml：<br/>
 
@@ -89,7 +90,7 @@ Page({
 
 * 运行效果：<br/>
 
-![toast-gif](https://github.com/MoonCheung/Web-diary/blob/master/static/Images/toast.gif)
+![toast-gif](https://github.com/MoonCheung/WebDiary/blob/master/static/Images/toast.gif)
 
 <div id="wx-loading"></div>
 
@@ -125,4 +126,4 @@ Page({
 
 * 运行效果：<br/>
 
-![loading-gif](https://github.com/MoonCheung/Web-diary/blob/master/static/Images/loading.gif)
+![loading-gif](https://github.com/MoonCheung/WebDiary/blob/master/static/Images/loading.gif)
