@@ -30,7 +30,6 @@ flat1(arr) //打印出 [ 3, 12, 1, 2, 2, 3, 4, 5, 5, 6, 7, 8, 9, 11, 12, 12, 13,
  * 两个数组合并为1个数组，比如[A1, A2, A, B1, B2, B, C1, C2, C, D1, D2, D]
  * @param Array
  */
-
 let a1 =  ['A1', 'A2', 'B1', 'B2', 'C1', 'C2', 'D1', 'D2']
 let a2 = ['A','B','C','D'].map((item) => {
   return item + 3;
@@ -73,4 +72,55 @@ for(let i =0; i<10; i++){
     },1000)
   })(i)
 }
+```
+
+### 4.在输入字符串中出现重复字符的个数，（不区分大小写）
+
+```js
+/**
+ * 出现重复字符个数
+ * @param String text 字符串
+ */
+const texts = 'ABAOOVNWJ'
+function duplicateCount(text){
+  return (text.toLowerCase().split('').sort().join('').match(/(.)\1+/g) || []).length
+}
+
+duplicateCount(texts) //在字符串中出现重复字符个数：2 
+```
+
+### 5.写一个将字符串转驼峰式的函数
+
+```js
+/**
+ * 不论一个字符串转变成驼峰式的字符串
+ * @param String str 字符串
+ */
+function camelCase(str){
+  // split: 指定字符串分割为子字符串，以确定每个拆分的位置 
+  return str.split(' ').map(v => v.replace(/\b(\w)/g, function(f1){
+    return f1.toUpperCase()
+  }))
+}
+camelCase('hello world');
+```
+
+### 6.求泰波那契数列
+
+```js
+/**
+ * 返回泰波那契数列
+ * @param Array signature 数组
+ * @param Nuber n
+ */
+function tribonacci(signature, n){
+  for(var i = 0; i < n-3; i++){
+    signature.push(signature[i] + signature[i+1] + signature[i+2])
+  }
+  // slice: 从原字符串中提取出来的新字符串
+  return signature.slice(0 , n);
+}
+
+tribonacci([1,1,1], 1) // [1]
+tribonacci([1,2,7], 2) // [1, 2]
 ```

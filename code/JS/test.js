@@ -14,8 +14,10 @@
 // const point = new Queue(2,3);
 // console.log(point);
 
-const array = ['🖕',3,'🖕','🖕',7,0,10]
-
-array.filter((item, index) => array.indexOf(item) === index)
-
-console.log(array);
+const array = ['1','6','2','🐐','1','5','9','10','🐐'];
+function unique(arr){
+  return arr.filter((v,i) => {
+    Object.is(i, arr.indexOf(v))
+  })
+}
+unique(array);
