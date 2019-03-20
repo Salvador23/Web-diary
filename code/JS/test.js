@@ -13,11 +13,3 @@
 // //对引用的赋值需要使用const常量
 // const point = new Queue(2,3);
 // console.log(point);
-
-const array = ['1','6','2','🐐','1','5','9','10','🐐'];
-function unique(arr){
-  return arr.filter((v,i) => {
-    Object.is(i, arr.indexOf(v))
-  })
-}
-unique(array);
