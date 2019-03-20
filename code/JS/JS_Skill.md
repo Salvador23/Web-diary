@@ -23,14 +23,6 @@ function flat1(arr){
 flat1(arr) //打印出 [ 3, 12, 1, 2, 2, 3, 4, 5, 5, 6, 7, 8, 9, 11, 12, 12, 13, 14, 10 ]
 ```
 
-<!-- #### 2.请在不使用Set的情况下实现数组去重?
-```js
-function unique(arr){
-  return arr.filter((v,i) => Object.is(i, arr.indexOf(v)))
-}
-console.log(unique(arr))
-``` -->
-
 ### 2.请把俩个数组 [A1, A2, B1, B2, C1, C2, D1, D2] 和 [A, B, C, D]，合并为 [A1, A2, A, B1, B2, B, C1, C2, C, D1, D2, D]
 
 ```js

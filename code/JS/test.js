@@ -13,3 +13,9 @@
 // //对引用的赋值需要使用const常量
 // const point = new Queue(2,3);
 // console.log(point);
+
+const array = ['🖕',3,'🖕','🖕',7,0,10]
+
+array.filter((item, index) => array.indexOf(item) === index)
+
+console.log(array);
