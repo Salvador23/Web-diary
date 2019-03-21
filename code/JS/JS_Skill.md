@@ -213,12 +213,12 @@ Reflect.ownKeys(child); //[ 'c', 'd', 'e', 'f', Symbol(child) ]
  */
 let number = ['2', '3', '4', '7', '10', '6','5','11'];
 function isPrime(nums){
-	for(let i=2; i < nums; i++){
-		if(nums % i === 0){
-			return false;
-		}
-	}
-	return nums > 1;
+  for(let i=2; i < nums; i++){
+    if(nums % i === 0){
+      return false;
+    }
+  }
+  return nums > 1;
 }
 
 isPrime(number) //false
