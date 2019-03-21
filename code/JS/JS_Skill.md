@@ -124,3 +124,136 @@ function tribonacci(signature, n){
 tribonacci([1,1,1], 1) // [1]
 tribonacci([1,2,7], 2) // [1, 2]
 ```
+
+### 7.for/in、Object.keys 和 Object.getOwnPropertyNames 对属性遍历有什么区别？你还知道其他遍历对象属性的方式吗？请说明。
+
+```js
+let parent = {}; //新创建空对象
+// Object.defineProperties() 该方法直接在一个对象上面定义新的属性或者修改属性返回新对象
+// value代表该值，writable代表可修改，enumerable代表可枚举，configurable代表可配置
+Object.defineProperties(parent, {
+  a: {
+    value: 1,
+    writable: true,
+    enumerable: true,
+    configurable: true
+  },
+  b: {
+    value: 1,
+    writable: true,
+    enumerable: false,
+    configurable: true
+  },
+  [Symbol('parent')]: {
+    value: 1,
+    writable: true,
+    enumerable: true,
+    configurable: true
+  }
+})
+
+let child = Object.create(parent, {
+  c: {
+    value: 1,
+    writable: true,
+    enumerable: true,
+    configurable: true
+  },
+  d: {
+    value: 1,
+    writable: false,
+    enumerable: true,
+    configurable: true
+  },
+  e: {
+    value: 1,
+    writable: true,
+    enumerable: false,
+    configurable: true
+  },
+  f: {
+    value: 1,
+    writable: true,
+    enumerable: true,
+    configurable: false
+  },
+  [Symbol('child')]: {
+    value: 1,
+    writable: true,
+    enumerable: false,
+    configurable: true
+  }
+})
+
+// for...in遍历对象自身的所有属性和继承的所有可枚举的属性，但不包含Symbol属性。
+for (let key in child){
+  console.log(key) // c d f a
+}
+
+// Object.keys() 返回对象自身的所有可枚举属性的数组，但不包含Symbol属性。
+Object.keys(child); //[ 'c', 'd', 'f' ]
+
+// Object.getOwnPropertyNames(obj) 返回对象自身所有属性名（包括不可枚举属性），但不包括Symbol值作为名称的属性
+Object.getOwnPropertyNames(child) //[ 'c', 'd', 'e', 'f' ]
+
+// Object.getOwnPropertySymbols() 返回对象自身的所有 Symbol 属性的数组。
+Object.getOwnPropertySymbols(child); // [ Symbol(child) ]
+Object.getOwnPropertySymbols(parent); // [ Symbol(parent) ]
+
+// Reflect.ownKeys()返回该对象自身所有属性名，包括是否可枚举属性，是否Symbol属性
+Reflect.ownKeys(child); //[ 'c', 'd', 'e', 'f', Symbol(child) ]
+```
+
+### 8.请写出一个判断质数的函数，返回布尔值
+
+```js
+/**
+ * 判断质数的函数，返回是否布尔值
+ * @param Array nums 数组
+ */
+let number = ['2', '3', '4', '7', '10', '6','5','11'];
+function isPrime(nums){
+	for(let i=2; i < nums; i++){
+		if(nums % i === 0){
+			return false;
+		}
+	}
+	return nums > 1;
+}
+
+isPrime(number) //false
+```
+
+### 9.请问类数组转数组有哪几种实现方式？
+
+```js
+let obj = {
+  0: 'a',
+  1: 'b',
+  length: 2
+}
+
+console.log(Array.from(obj))  //[ 'a', 'b' ]
+console.log(Array.prototype.slice.call(obj)) //[ 'a', 'b' ]
+console.log([].slice.call(obj)) //[ 'a', 'b' ]
+
+Object.prototype[Symbol.iterator] = function(){
+  let index = 0;
+  let propKeys = Reflect.ownKeys(obj);
+  let lIndex = propKeys.findIndex(v => v === 'length');
+  propKeys.splice(lIndex, 0);
+
+  return {
+    next() {
+      if(index < propKeys.length){
+        let key = propKeys[index];
+        index++;
+        return { value: obj[key] }
+      }else{
+        return { done: true }
+      }
+    }
+  }
+}
+console.log( [...obj] ) //[ 'a', 'b', 2 ]
+```
