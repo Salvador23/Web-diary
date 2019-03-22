@@ -257,3 +257,24 @@ Object.prototype[Symbol.iterator] = function(){
 }
 console.log( [...obj] ) //[ 'a', 'b', 2 ]
 ```
+
+### 10.请在不使用Set的情况下实现数组去重?
+
+```js
+/**
+ *  数组去重复
+  * @param arr  数组
+ */
+const arr1 = ['1','5','7','3','8','0','8'];
+const arr2 = ['🐺', 0, 1, 2, '🐺', '🐑', 3, '🐑'];
+
+function unique(arr){
+  return arr.filter((item, index) => {
+    // indexOf()方法返回在数组中可找到第一个给定元素的第一个索引
+    return  arr.indexOf(item) === index;
+  })
+}
+
+unique(arr1); //[ '1', '5', '7', '3', '8', '0' ]
+unique(arr2); //[ '🐺', 0, 1, 2, '🐑', 3 ]
+```

@@ -14,32 +14,20 @@
 // const point = new Queue(2,3);
 // console.log(point);
 
-let obj = {
-  0: 'a',
-  1: 'b',
-  length: 2
+
+/**
+ *  数组去重复
+  * @param arr  数组
+ */
+const arr1 = ['1','5','7','3','8','0','8'];
+const arr2 = ['🐺', 0, 1, 2, '🐺', '🐑', 3, '🐑'];
+
+function unique(arr){
+  return arr.filter((item, index) => {
+    // indexOf()方法返回在数组中可找到第一个给定元素的第一个索引
+    return  arr.indexOf(item) === index;
+  })
 }
 
-console.log(Array.from(obj))  //[ 'a', 'b' ]
-console.log(Array.prototype.slice.call(obj)) //[ 'a', 'b' ]
-console.log([].slice.call(obj)) //[ 'a', 'b' ]
-
-Object.prototype[Symbol.iterator] = function(){
-  let index = 0;
-  let propKeys = Reflect.ownKeys(obj);
-  let lIndex = propKeys.findIndex(v => v === 'length');
-  propKeys.splice(lIndex, 0);
-
-  return {
-    next() {
-      if(index < propKeys.length){
-        let key = propKeys[index];
-        index++;
-        return { value: obj[key] }
-      }else{
-        return { done: true }
-      }
-    }
-  }
-}
-console.log( [...obj] ) //[ 'a', 'b', 2 ]
+console.log(unique(arr1));
+console.log(unique(arr2));
