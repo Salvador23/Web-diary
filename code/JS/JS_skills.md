@@ -21,6 +21,20 @@ function flat1(arr){
   return arr.flat(Infinity) //Infinity:无穷大
 }
 flat1(arr) //打印出 [ 3, 12, 1, 2, 2, 3, 4, 5, 5, 6, 7, 8, 9, 11, 12, 12, 13, 14, 10 ]
+
+/**
+ * n维数组扁平化（方式三）
+ * @param Array
+ */
+function flatten(arr) {
+  while(arr.some(item => Array.isArray(item))){
+    arr = [].concat(...arr);
+  }
+  return arr;
+}
+
+flatten([1,[2,'🐱',3,],'🦊'])  // [1, 2, "🐱", 3, "🦊"]
+flatten([1,[2,3,[4,'🐱',5],'🐏']]) // [1, 2, 3, 4, "🐱", 5, "🐏"]
 ```
 
 ### 2.请把俩个数组 [A1, A2, B1, B2, C1, C2, D1, D2] 和 [A, B, C, D]，合并为 [A1, A2, A, B1, B2, B, C1, C2, C, D1, D2, D]
@@ -328,7 +342,50 @@ moveZeros(arr); //[ 's', '😅', 'm', 1, 'd', 1, 2, 0, 0 ]
 let strs = 'hello Javascript';
 function reverseStr(str){
   //join()方法通过连接数组（或类数组对象）中的所有元素（用逗号或指定的分隔符字符串分隔）来创建并返回一个新字符串
-	return str === str.split('').reverse().join('')
+  return str === str.split('').reverse().join('')
 }
 reverseStr(strs) // false
+```
+
+### 15 下面代码中a在什么情况下会打印出来呢
+
+```js
+//利用toString()
+let a = {
+  i:1,
+  toString(){
+    return a.i++;
+  }
+}
+
+if(a == 1 && a == 2 && a == 3){
+  console.log(1);
+}
+
+//利用valueOf()
+let a = {
+  i: 1,
+  // valueOf()方法返回指定对象的原始值。
+  valueOf(){
+    return a.i++;
+  }
+}
+
+if(a == 1 && a == 2 && a == 3){
+  console.log(1);
+}
+
+//利用ES6的Symbol.toPrimitive
+let a = {
+  //对象Symbol.toPrimitive属性的指向一个方法。该对象被转为原始类型的值时，会调用这个方法，返回该对象对应的原始类型值。
+  [Symbol.toPrimitive]: ((i) => {
+    return () => {
+      return ++i
+    }
+  })(0) 
+};
+
+if(a == 1 && a == 2 && a == 3) {
+  console.log('1');
+}
 ```
