@@ -1,23 +1,9 @@
-// class Queue{
-// 	constructor (contents = []){
-// 		this._queue = [...contents] //扩展符
-// 	}
-
-// 	pop(){
-// 		const value = this._queue[0];
-// 		this._queue.splice(0,1)
-// 		return value;
-// 	}
-// }
-
-// //对引用的赋值需要使用const常量
-// const point = new Queue(2,3);
-// console.log(point);
-
-let arr = ['s','😅','m',1,0,'d',1,0,2];
-
-function moveZeros(arr){
-  return [...arr.filter(v => v !== 0), ...arr.filter(v => v === 0)];
+function flatten(arr) {
+  while(arr.some(item => Array.isArray(item))){
+    arr = [].concat(...arr);
+  }
+  return arr;
 }
 
-moveZeros(arr); //[ 's', '😅', 'm', 1, 'd', 1, 2, 0, 0 ]
+flatten([1,[2,'🐱',3,],'🦊'])
+flatten([1,[2,3,[4,'🐱',5],'🐏']])
