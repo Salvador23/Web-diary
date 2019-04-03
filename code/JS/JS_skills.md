@@ -36,6 +36,54 @@ function flatten(arr) {
 
 flatten([1, [2, '🐱', 3], '🦊']); // [1, 2, "🐱", 3, "🦊"]
 flatten([1, [2, 3, [4, '🐱', 5], '🐏']]); // [1, 2, 3, 4, "🐱", 5, "🐏"]
+
+let arr = [1, [2, 3, [4, '🐱', 5], '🐏'], '🐆', '🦄'];
+
+/**
+ * 使用迭代实现n维数组扁平化
+ * @param {Array} arr
+ */
+function flatten(arr) {
+  let arrs = [...arr];
+  let newArr = [];
+  while (arrs.length) {
+    let item = arrs.shift();
+    if (Array.isArray(item)) {
+      arrs.unshift(...item);
+    } else {
+      newArr.push(item);
+    }
+  }
+  return newArr;
+}
+
+let flat = flatten(arr); //[ 1, 2, 3, 4, '🐱', 5, '🐏', '🐆', '🦄' ]
+
+/**
+ * 使用递归实现n维数组扁平化
+ * @param {Array} arr
+ */
+function flatten(arr) {
+  let arrs = [];
+  arr.map(item => {
+    if (Array.isArray(item)) {
+      arrs.push(...flatten(item));
+    } else {
+      arrs.push(item);
+    }
+  });
+  return arrs;
+}
+
+let flat = flatten(arr); //[ 1, 2, 3, 4, '🐱', 5, '🐏', '🐆', '🦄' ]
+
+/**
+ * 通过字符串转换实现n维数组扁平化
+ */
+arr
+  .join(',')
+  .split(',')
+  .map(item => Number(item)); //[ 1, 2, 3, 4, '🐱', 5, '🐏', '🐆', '🦄' ]
 ```
 
 ### 2.请把俩个数组 [A1, A2, B1, B2, C1, C2, D1, D2] 和 [A, B, C, D]，合并为 [A1, A2, A, B1, B2, B, C1, C2, C, D1, D2, D]
@@ -408,4 +456,31 @@ let a = {
 if (a == 1 && a == 2 && a == 3) {
   console.log('1');
 }
+```
+
+### 16 从 URL 分割若个参数
+
+```js
+/**
+ *  从URL分割若个参数函数
+ * @param url 字符串
+ */
+
+const url = 'http://www.taobao.com/index.php?key0=0&key1=1&key2=2';
+
+function parseQueryString(url) {
+  let str = url.split('?')[1];
+  let items = str.split('&');
+  let arr, name, value;
+
+  for (var i = 0; i < items.length; i++) {
+    let self = this;
+    arr = items[i].split('=');
+    name = arr[0];
+    value = arr[1];
+    self[name] = value;
+  }
+}
+const obj = new parseQueryString(url);
+console.log(obj); //parseQueryString { key0: '0', key1: '1', key2: '2' }
 ```
