@@ -484,3 +484,51 @@ function parseQueryString(url) {
 const obj = new parseQueryString(url);
 console.log(obj); //parseQueryString { key0: '0', key1: '1', key2: '2' }
 ```
+
+### 实现一个 sleep 函数，比如 sleep(1000) 意味着等待 1000 毫秒，可从 Promise、Generator、Async/Await 等角度实现
+
+```js
+/**
+ * 从ES6 Async/Await可实现一个 sleep 函数等待1000输出
+ * @param {Number} time
+ */
+const sleep = time => {
+  return new Promise(resolve => setTimeout(resolve, time));
+};
+
+async function sleepAsync() {
+  console.log('start sleep!!');
+  await sleep(1000);
+  console.log('end sleep!!');
+}
+
+sleepAsync();
+
+/**
+ * 从ES6 Promise可实现一个 sleep 函数等待1000输出
+ * @param {Number} time
+ */
+const sleep = time => {
+  return new Promise(resolve => setTimeout(resolve, time));
+};
+
+sleep(1000).then(() => {
+  console.log('输出' + 1);
+});
+
+/**
+ * 从ES6 Generator/yiled可实现一个 sleep 函数等待1000输出
+ * @param {Number} time
+ */
+function* sleepGenerator(time) {
+  yield new Promise(resolve => {
+    setTimeout(resolve, time);
+  });
+}
+
+sleepGenerator(1000)
+  .next()
+  .value.then(() => {
+    console.log('输出' + 1);
+  });
+```
